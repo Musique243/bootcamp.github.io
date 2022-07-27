@@ -14,6 +14,7 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
+    return string.length;
     
 
 
@@ -25,6 +26,7 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
+    return string.toLowerCase();
 
 
 
@@ -36,6 +38,7 @@ function toLowerCase(string) {
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
+    return string.toUpperCase();
 
 
 
@@ -57,8 +60,7 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
-
+    return string.replace(/\s/g, '-').toLowerCase();
 
     // YOUR CODE ABOVE HERE //
 }
