@@ -17,6 +17,7 @@
  */
 function print(value) {
   // YOUR CODE BELOW HERE //
+  // print value to console
   console.log(value);
   
   
