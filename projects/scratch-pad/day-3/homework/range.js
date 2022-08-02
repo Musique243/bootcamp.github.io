@@ -21,20 +21,29 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
+/*
+I: function takes in two intergers
+O: function returns an array containing all intergers between the two input intergers inclusively
+C: if first argument is greater, return range in reverse order
+E:
+*/
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     // create a new array containing intergers //
     var output = [];
     if (start < end) {
+        // iterate through the integers and add to output array
         for (var i = start; i <= end; i++) {
             output.push(i);
         }
     }
     if (start > end) {
+        // iterate through integers and add to output array
         for (var i = start; i >= end; i--) {
             output.push(i);
         }
     }
+    // return the output array
     return output;
     
     // YOUR CODE GOES ABOVE HERE //
