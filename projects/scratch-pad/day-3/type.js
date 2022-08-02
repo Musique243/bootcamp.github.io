@@ -12,8 +12,15 @@
  * TIP: In JavaScript, how can we decipher if a value is an Array? Can typeof
  * work?
  */
+/*
+I: function takes in an input value
+O: function returns true if value is array, false otherwise
+C: N/A
+E: N/A
+*/
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+    // if value is array return true, false otherwise
     if (Array.isArray(value)) {
         return true;
     }
@@ -31,6 +38,12 @@ function isArray(value) {
  * null, not an Array, not a Date - all of these will return 'object' if used 
  * with typeof.
  */
+/*
+I: function takes in an input value
+O: function returns true if value is object inteded for collection, false otherwise
+C: can't be null, array, or date
+E:
+*/
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     if (typeof(value) === "object" && value !== null && !Array.isArray(value) && value instanceof Date !== true) {
@@ -48,6 +61,12 @@ function isObject(value) {
  * 
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
+/*
+I: function takes in an input value
+O: function returns true if value is array or object intende for collection, false otherwise
+C: can't be null or a date
+E:
+*/
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
     if (Array.isArray(value) || typeof(value) === "object" && value !== null && value instanceof Date !== true) {
@@ -78,6 +97,12 @@ function isCollection(value) {
  *    typeOf("javascript") -> "string"
  *    typeOf([1,2,3]) -> "array"
  */ 
+/*
+I: function takes in an input value
+O: function returns the type of value as a string
+C: N/A
+E: N/A
+*/
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
     if (typeof(value) === "string") {
