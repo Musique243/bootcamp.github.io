@@ -11,12 +11,13 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Object Creation //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
 // create empty object called animal
 var animal = {};
 // add property of species and name any species using dot notation
 animal.species = "canine";
 // add property of name using bracket notation and give the animal a name
-animal["name"] = "Puppy";
+animal["name"] = "Bandit";
 // add property called noises and make it an empty array
 animal.noises = [];
 // print animal to console using console.log
@@ -25,6 +26,7 @@ console.log(animal);
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Array Creation ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
 // create empty array called noises
 var noises = [];
 // add a string to noises using bracket notation
@@ -46,7 +48,12 @@ console.log(noises);
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+// assign noises property to animals to the new noises array using bracket notation
+animal["noises"] = noises;
+// add another noise to noises property on animal
+animal.noises.push("growl");
+// console log animal
+console.log(animal);
 
 /* *******************************************************************
  * Step 4 - Review
@@ -71,7 +78,26 @@ console.log(noises);
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+// create empty array called animals
+var animals = [];
+// push animal onto the new animals array
+animals.push(animal);
+// console log animals
+console.log(animals);
+// create variable duck and assign the following data
+var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }
+// push duck to the animals array
+animals.push(duck);
+// console log animals
+console.log(animals);
+// create two more animal objects and add them to the animals array
+var cat = { species: 'feline', name: 'Whiskers', noises: ['meow', 'purr'] };
+var tiger ={ species: 'feline', name: 'Stripes', noises: ['roar', 'growl'] };
+animals.push(cat);
+animals.push(tiger);
+// console log animals and length of animals
+console.log(animals);
+console.log(animals.length);
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
