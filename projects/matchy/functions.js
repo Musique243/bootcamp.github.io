@@ -13,12 +13,34 @@
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// create function declaration called search
+function search(animals, name) {
+    // iterate through animals array
+    for (var i = 0; i < animals.length; i++) {
+        // if animal name exists return animal object
+        if (animals[i].name === name) {
+            return animals[i];
+        }
+    }
+    // return null if name does not exist
+    return null;
+};
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// write a function dec called replace
+function replace(animals, name, replacement) {
+    // iterate through animals array
+    for (var i = 0; i < animals.length; i++) {
+        // if animal name exists in animals array, replace with animal object
+        if (animals[i].name === name) {
+           return animals[i] = replacement;
+        }
+    }
+};
 
 
 //////////////////////////////////////////////////////////////////////
