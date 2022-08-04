@@ -47,12 +47,36 @@ function replace(animals, name, replacement) {
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// write function declaration called remove
+function remove(animals, name) {
+    // iterate through the animals array
+    for (var i = 0; i < animals.length; i++) {
+       // if animal name exists in animal array, remove it 
+       if (animals[i].name === name) {
+        return animals.splice(animals[i], 1);
+       }
+    }  
+};
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// write a function declaration called add
+function add(animals, animal) {
+    // iterate through the animals array
+    // if animal object has a name and species property length > 0 & no same name
+    for (var i = 0; i < animals.length; i++) {
+        if (animal.name.length > 0 && animal.species.length > 0 && animals[i].name !== animal.name) {
+            // add animal object to animals array
+            animals.push(animal);
+            // if animal shares same name as animal in animals array return null
+        }else if (animals[i].name === animal.name) {
+            return null;
+        }
+    }
+};
 
 
 /**
