@@ -251,9 +251,9 @@ function sortAscending(stringOne, stringTwo) {
     // create conditional statement comparing which string is higher in alphabetical order
     // returns 1 if first is higher, -1 if second is higher, and 0 if they are both equal
     // higher means less when comparing alphabetically
-    if (stringOne > stringTwo) {
+    if (stringOne < stringTwo) {
         return -1;
-    }else if (stringTwo > stringOne) {
+    }else if (stringTwo < stringOne) {
         return 1;
     }else if (stringOne === stringTwo) {
         return 0;
@@ -282,9 +282,9 @@ function sortDescending(stringOne, stringTwo) {
     // create conditional statement comparing which string is lower in alphabetical order
     // returns 1 if first is lower, -1 if second is lower, and 0 if both are equal
     // lower means more when comparing alphabetically
-    if (stringOne > stringTwo) {
+    if (stringOne < stringTwo) {
         return 1;
-    }else if (stringTwo > stringOne) {
+    }else if (stringTwo < stringOne) {
         return -1;
     }else if (stringOne === stringTwo) {
         return 0;
