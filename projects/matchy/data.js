@@ -112,6 +112,8 @@ var getRandom = function(animals) {
 // Using a random index from this function, get a random animal and add its `name` to `friends`.
 friends.push(animals[getRandom(animals)].name);
 
+// use bracket notation to add friends list as property to one of the animals in animals array
+animals[0]['friends'] = friends; 
 
 
 /**
