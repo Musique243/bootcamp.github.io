@@ -75,14 +75,20 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+    // return name is a species
+    // first letter of name and species must be capitalized
+    return object.name.charAt(0).toUpperCase() + object.name.slice(1) + " is a " + object.species.charAt(0).toUpperCase() + object.species.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in an object
+// function returns the object noises array as a string separated by a space
+// if no noises return "there are no noises"
 function maybeNoises(object) {
+    // if statement to determine if noises array exists
 
 }
 
@@ -90,6 +96,8 @@ function maybeNoises(object) {
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in a string of words and a word
+// function returns true if word is in string, otherwise false
 function hasWord(string, word) {
 
 }
