@@ -99,24 +99,49 @@ function maybeNoises(object) {
 // function takes in a string of words and a word
 // function returns true if word is in string, otherwise false
 function hasWord(string, word) {
-
+    // conditional statement to determine if word is in string
+    if (string.includes(word)) {
+        // return true
+        return true;
+    } else {
+        // otherwise return false
+        return false;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in a name and object
+// function adds name to object's friends array and returns object
 function addFriend (name, object) {
-
+    object.friends.push(name);
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in a name and object
+// function returns true if name is a friend of object, false otherwise
 function isFriend(name, object) {
-
+    // conditional statement to check if friends array exists in object
+    if (Array.isArray(object.friends) && object.hasOwnProperty("friends")) {
+        // iterate through object friends array
+        for (let i = 0; i < object.friends.length; i++) {
+            // conditional statement to determine if name exists in object friends array
+            if (object.friends[i] === name) {
+                // return true
+                return true;
+            }
+        }
+    }
+    // otherwise return false
+    return false;
 }
+   
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
