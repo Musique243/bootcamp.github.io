@@ -2,7 +2,7 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-const { slice } = require("lodash");
+const { slice, remove } = require("lodash");
 
 function objectValues(object) {
     return Object.values(object);
@@ -147,7 +147,13 @@ function isFriend(name, object) {
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in a name and a list of people array
+// function returns a list of all the names that is not friends with
 function nonFriends(name, array) {
+    // create a new array to hold the list of names
+    var list = [];
+    var output = [];
+    var current = null;
 
 }
 
@@ -155,7 +161,13 @@ function nonFriends(name, array) {
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in an object, key, and value
+// function updates the property key on object with new value. If key does not exist on object, create it
 function updateObject(object, key, value) {
+    // update object's key with the new value
+    object[key] = value;
+    // return the updated object
+    return object;
 
 }
 
@@ -163,15 +175,33 @@ function updateObject(object, key, value) {
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in an object and an array of strings
+// function removes any properties on object that are listed in array
 function removeProperties(object, array) {
-
+    // iterate through array
+    for (var i = 0; i < array.length; i++) {
+        // conditional to determine if string in array exists in object
+        if (object.hasOwnProperty(array[i])) {
+            // delete the object property
+            delete(object[array[i]]);
+        }
+    }
+    // return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function takes in an array
+// function returns an array with all duplicates removed
 function dedup(array) {
+    // create new variable for set 
+    var noDups = new Set(array);
+    // create new variable for values
+    var val = noDups.values();
+    return Array.from(val);
 
 }
 
