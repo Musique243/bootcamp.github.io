@@ -89,6 +89,13 @@ function profileInfo(object) {
 // if no noises return "there are no noises"
 function maybeNoises(object) {
     // if statement to determine if noises array exists
+    if (object.noises && object.noises.length > 0) {
+        // return noises array as string seperated by space
+        return object.noises.join(" ");
+    }else {
+        // otherwise return "there are no noises"
+        return "there are no noises";
+    }
 
 }
 
