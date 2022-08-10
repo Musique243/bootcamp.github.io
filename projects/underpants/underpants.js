@@ -21,6 +21,11 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
+// function takes in any value
+// function returns the input value unchanged
+_.identity = function(value) {
+    return value;
+}
 
 /** _.typeOf
 * Arguments:
