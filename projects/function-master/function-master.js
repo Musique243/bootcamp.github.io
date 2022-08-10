@@ -161,7 +161,24 @@ function nonFriends(name, array) {
     var list = [];
     var output = [];
     var current = null;
-
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        // conditional statment if name in list equals input name
+        if (array[i].name === name) {
+            current = array[i];
+        }else {
+            list.push(array[i].name);
+        }
+    }
+    if (current === null) {
+        return list;
+    }
+    for (let i = 0; i < list.length; i++) {
+        if (current.friends.indexOf(list[i]) === -1) {
+            output.push(list[i]);
+        }
+    }
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////
