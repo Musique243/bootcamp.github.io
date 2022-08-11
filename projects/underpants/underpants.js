@@ -122,6 +122,27 @@ _.first = function(array, number) {
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+// function takes in an array and a number
+// function returns the last number items of the input array
+// if not an array return empty array
+// if not given a number or not a number, return last element of array
+_.last = function(array, number) {
+    // if array or negative number
+    if (!Array.isArray(array) || number < 0) {
+        // return empty array
+        return [];
+        // if not a number or non given
+    } else if (number === null || typeof number !== "number") {
+        // return last element of array
+        return array[array.length - 1];
+        // if number greater than array length
+    } else if (number > array.length) {
+        // return whole array
+        return array;
+    } else {
+        return array.splice(number - 1, array.length);
+    }
+}
 
 /** _.indexOf
 * Arguments:
