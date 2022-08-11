@@ -47,6 +47,24 @@ _.identity = function(value) {
 * _.typeOf([1,2,3]) -> "array"
 */
 
+// function takes in any value
+// function returns the type of input value as a string
+_.typeOf = function(value) {
+    // determine if object and null
+    if (typeof value === "object" && value === null) {
+        return "null";
+        // determine if object
+    } else if (typeof value === 'object' && !Array.isArray(value) && value !== null) {
+        return "object";
+        // determine if array
+    } else if (Array.isArray(value)) {
+        return "array";
+        // for everything else
+    } else {
+        // return the type of value
+        return typeof value;
+    }
+}
 
 /** _.first
 * Arguments:
@@ -66,6 +84,25 @@ _.identity = function(value) {
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+// function takes in an array and a number
+// function returns the first number item of input array
+// if array is not array, return empty array
+// if no number given or not a number, return first element in array
+_.first = function(array, number) {
+    // determine if array exists
+    if (!Array.isArray(array) || number < 0) {
+        // return empty array
+        return [];
+        // if number not given or not a number
+    } else if (number === null || typeof number !== "number") {
+        // return first element of array
+        return array[0];
+    } else if (number > array.length) {
+        return array;
+    } else {
+        return array.slice(0, number);
+    }
+} 
 
 /** _.last
 * Arguments:
