@@ -160,6 +160,23 @@ _.last = function(array, number) {
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+// function takes in an array and a value
+// function returns the index of array that is the 1st occurrance of value
+// return -1 if value not in array
+// don't use indexof
+_.indexOf = function(array, value) {
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        // if value is in array
+        if (array[i] === value) {
+            // return index of value in array
+            return i;
+        } 
+        
+    }
+    // else value not in array, return -1
+    return -1;
+}
 
 /** _.contains
 * Arguments:
@@ -176,6 +193,17 @@ _.last = function(array, number) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+// function takes in an array and a value
+// function returns true if array contains the value, otherwise false
+// must use ternary operator
+_.contains = function(array, value) {
+    // iterate through array
+    var output = false;
+    for (let i = 0; i < array.length; i++) {
+        (array[i]) === value ? output = true : output;
+    }
+    return output;
+}
 
 /** _.each
 * Arguments:
