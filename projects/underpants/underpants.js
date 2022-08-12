@@ -221,6 +221,26 @@ _.contains = function(array, value) {
 *      -> should log "a" "b" "c" to the console
 */
 
+// function takes in a collection and a function
+// if array, function calls once for each element with element, index, collection 
+// if object, function calls once for each property with prop value, key, collection
+_.each = function(collection, func) {
+    // if collection is array
+    if (Array.isArray(collection)) {
+        // iterate through array
+        for (let i = 0; i < collection.length; i++) {
+            // call function 
+            func(collection[i], i, collection);
+        }
+        // else collection is object
+    } else {
+        // iterate through object
+        for (var key in collection) {
+            // call function
+            func(collection[key], key, collection);
+        }
+    }
+}
 
 /** _.unique
 * Arguments:
@@ -232,6 +252,12 @@ _.contains = function(array, value) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+// function takes in an array
+// function returns a new array of all elements from array with dups removed
+// use _.indexOf()
+_.unique = function(array) {
+    
+}
 
 /** _.filter
 * Arguments:
