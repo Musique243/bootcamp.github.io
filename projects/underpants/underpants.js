@@ -256,7 +256,8 @@ _.each = function(collection, func) {
 // function returns a new array of all elements from array with dups removed
 // use _.indexOf()
 _.unique = function(array) {
-    
+    // create an empty array
+    var output = [];
 }
 
 /** _.filter
@@ -275,6 +276,23 @@ _.unique = function(array) {
 *   use _.each in your implementation
 */
 
+// function takes in an array and a function
+// function returns a new array of elements for calling func returned true
+// call func for each element in array pass args element, index, array
+_.filter = function(array, func) {
+    // create new array
+    var filtered = [];
+    // iterate through the input array
+    for (let i = 0; i < array.length; i++) {
+        // call func for each element with element, index, array
+        if (func(array[i], i, array)) {
+            // if true push to new array
+            filtered.push(array[i]);
+        }
+    }
+    // return output array
+    return filtered;
+}
 
 /** _.reject
 * Arguments:
@@ -289,6 +307,23 @@ _.unique = function(array) {
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+// function takes in an array and function
+// function returns a new array of elements which when func called returned false
+// call func for each element passing element, index, array
+_.reject = function(array, func) {
+    // create new array
+    var rejected = [];
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        // pass func to each arg to test false
+        if (!func(array[i], i, array)) {
+            // if false push to output array
+            rejected.push(array[i]);
+        }
+    }
+    // return output array
+    return rejected;
+}
 
 /** _.partition
 * Arguments:
