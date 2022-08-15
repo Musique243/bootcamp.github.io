@@ -258,6 +258,13 @@ _.each = function(collection, func) {
 _.unique = function(array) {
     // create an empty array
     var output = [];
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        if(_.indexOf(output, array[i]) === -1) {
+            output.push(array[i]);
+        }
+    }
+    return output;
 }
 
 /** _.filter
@@ -382,6 +389,29 @@ _.partition = function(array, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+// function takes in a collection and a function
+// call func for each element passing args element, index, collection for array
+// call func passing args value, key, collection for object
+// returns a new array with value of each call 
+_.map = function(collection, func) {
+    // create a new output array
+    var mapped = [];
+    // determine if array
+    if (Array.isArray(collection)) {
+        // iterate through array
+        for (let i = 0; i < collection.length; i++) {
+            // pass func to element, index, collection
+            mapped.push(func(collection[i], i, collection));
+        }
+    } else if (typeof collection === "object") {
+        // iterate through object
+        for (var key in collection) {
+            mapped.push(func(collection[key], key, collection));
+        }
+    }
+    // return output array
+    return mapped;
+}
 
 /** _.pluck
 * Arguments:
