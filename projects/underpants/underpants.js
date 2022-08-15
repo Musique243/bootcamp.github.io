@@ -344,6 +344,27 @@ _.reject = function(array, func) {
 }
 */
 
+// function takes in an array and function 
+// function returns an array made up of 2 sub arrays: 1 contains all values returned truthy, and 1 with falsy
+_.partition = function(array, func) {
+    // create new arrays for outputs
+    var truthy = [];
+    var falsy = [];
+    var output = [];
+    // iterate through the input array
+    for (let i = 0; i < array.length; i++) {
+        // determine if pass func is truthy
+        if (func(array[i], i, array)) {
+            // push to truthy
+            truthy.push(array[i]);
+        } else if (!func(array[i], i, array)) {
+            falsy.push(array[i]);
+        }
+    }
+    // return both array combined into output array
+    output.push(truthy, falsy);
+    return output;
+}
 
 /** _.map
 * Arguments:
