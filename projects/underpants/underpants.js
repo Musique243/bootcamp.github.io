@@ -637,6 +637,17 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
+// function takes in two or more objects
+// function copies from object 1 to object 2
+// function returns the updated object 1
+_.extend = function(obj1, ...objects) {
+    // iterate through objects
+    for (let i = 0; i < objects.length; i++) {
+        Object.assign(obj1, objects[i]);
+    }
+    return obj1;
+}
+
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
