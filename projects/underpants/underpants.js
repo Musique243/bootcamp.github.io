@@ -526,6 +526,56 @@ _.every = function(collection, func) {
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+// function takes in a collection and a function
+// call func for every element of collection if array and value if object
+// if return value for calling func true for at least one return true, otherwise false
+// what if func undefined
+_.some = function(collection, func) {
+    // if func undefined
+    if (func === undefined) {
+        // collection is an array
+        if (Array.isArray(collection)) {
+            // iterate through array
+            for (let i = 0; i < collection.length; i++) {
+                // if current element is true
+                if (collection[i]) {
+                    return true;
+                }
+            }
+            return false;
+        }else {
+            // else its an object
+            for (var key in collection) {
+                // if current value is true
+                if (collection[key]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }else {
+        // else function is defined
+        if (Array.isArray(collection)) {
+            // iterate through array
+            for (let i = 0; i < collection.length; i++) {
+                // determine if passing func to current element is true
+                if (func(collection[i], i, collection)) {
+                    return true;
+                }
+            }
+            return false;
+        }else {
+            // else collection is object
+            for (var key in collection) {
+                // determine if func passing to current value is true
+                if (func(collection[key], key, collection)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+}
 
 /** _.reduce
 * Arguments:
