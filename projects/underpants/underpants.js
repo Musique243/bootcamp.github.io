@@ -424,6 +424,17 @@ _.map = function(collection, func) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+// function takes in an array and a property
+// function returns an array containing value of property for every element in array
+// must use _.map()
+_.pluck = function(array, property) {
+    // create variable 
+    var result = _.map(array, function(element) {
+        return element[property];
+    });
+    // return result
+    return result;
+}
 
 /** _.every
 * Arguments:
@@ -446,6 +457,53 @@ _.map = function(collection, func) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+// function takes in a collection and a function
+// if array, call func with element, index, collection
+// if object, call func with value, key, collection
+// if return value for every element is true return true, if one false return false
+// if function not provided, return true if every element is truthy, otherwise return false
+_.every = function(collection, func) {
+    // if function is undefined
+    if (func === undefined) {
+        // if collection is array
+        if (Array.isArray(collection)) {
+            // iterate through array
+            for (let i = 0; i < collection.length; i++) {
+                if (!collection[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }else{
+            // else iterate through an object
+            for (var key in collection) {
+                if (!collection[key]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }else{
+        // if collection is array
+        if (Array.isArray(collection)) {
+            // iterate through array
+            for (let i = 0; i < collection.length; i++) {
+                if (!func(collection[i])) {
+                    return false;
+                }
+            }
+            return true;
+        }else {
+            // collection is object
+            for (var key in collection) {
+                if (!collection[key]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+}
 
 /** _.some
 * Arguments:
