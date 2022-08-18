@@ -21,13 +21,43 @@ var _ = require(/* Replace this with the name of your lodown! */);
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
+// function takes in an array
+// function returns the number of male customers
+// must use filter
 var maleCount = function(array) {
-
+    // use filter for male customers
+    var males = _.filter(array, function(customer) {
+        // if males in array
+        if (customer.gender === "male") {
+            return true;
+        }else {
+            return false;
+        }
+    })
+    // get length of males which is the number
+    return males.length;
 };
 
-var femaleCount;
+// function takes in an array
+// function returns the number of female customers
+// must use reduce
+var femaleCount = function(array) {
+    // use reduce
+    var females = _.reduce(array, function(numFemales, customer) {
+        // if female in customer
+        if (customer.gender === "female") {
+            numFemales += 1;
+        }
+        return numFemales;
+    }, 0)
+    return females;
+};
 
-var oldestCustomer;
+// function takes in an array
+// function retunrs a string of the oldest customer's name
+var oldestCustomer = function(array) {
+    
+};
 
 var youngestCustomer;
 
