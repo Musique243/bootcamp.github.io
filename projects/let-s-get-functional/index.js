@@ -147,9 +147,52 @@ var friendsCount = function(array, name) {
     return list;
 };
 
-var topThreeTags;
+// function takes in an array
+// function returns an array of the three most common tags of customers
+var topThreeTags = function(array) {
+    // create an array for all tags
+    var allTags = [];
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        // iterate through tags
+        for (let j = 0; j < array[i].tags.length; j++) {
+            // push tags to new array
+            allTags.push(array[i].tags[j]);
+        }
+    }
+    var tagsCount = {};
+    // iterate through alltags array
+    for (let i = 0; i < allTags.length; i++) {
+        if (tagsCount[allTags[i]]) {
+            tagsCount[allTags[i]] += 1;
+        } else {
+            tagsCount[allTags[i]] = 1;
+        }
+    }
+    var entries = Object.entries(tagsCount);
+    entries.sort(function(a, b) {
+        return b[1] - a[1];
+    })
+    var top3 = [entries[0][0], entries[1][0], entries[2][0]];
+    return top3;
+};
 
-var genderCount;
+// function takes in an array
+// creates a summary of genders in an object
+var genderCount = function(array) {
+    var genderObj = {female: 0, male: 0, "non-binary": 0};
+    var total = _.reduce(array, function(acc, customer) {
+        if (customer.gender === "male") {
+            genderObj.male += 1;
+        }else if (customer.gender === "female") {
+            genderObj.female += 1;
+        }else {
+            genderObj["non-binary"] += 1;
+            return total;
+        }
+    }, 0)
+    return genderObj;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
