@@ -71,7 +71,12 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
+var range = function(x, y, result = []) {
+  // base
+  if (x === y) {
+    return result;
+  }
+
 };
 
 // 7. Compute the exponent of a number.
@@ -80,6 +85,16 @@ var range = function(x, y) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+  // base
+  if (exp === 0) {
+    return 1;
+  }
+  if (exp > 0) {
+    return base * exponent(base, exp - 1);
+  }
+  if (exp < 0) {
+    return 1 / exponent(base, -exp);
+  }
 };
 
 // 8. Determine if a number is a power of two.
@@ -87,14 +102,28 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  // base
+  if (n === 1) {
+    return true;
+  }
+  if (n % 1 !== 0 || n < 1) {
+    return false;
+  }
+  return powerOfTwo(n / 2);
 };
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  // base
+  if (string.length <= 1) {
+    return string;
+  }
+  return (string.charAt(string.length - 1) + reverse(string.slice(0, string.length - 1)));
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  // base
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -109,6 +138,14 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+  if (y === 0) {
+    return 0;
+  }
+  if (y > 0) {
+    return x + multiply(x, y - 1);
+  }else {
+    return -multiply(x, -y);
+  }
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
