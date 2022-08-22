@@ -69,7 +69,7 @@ var oldestCustomer = function(array) {
 // function returns a string of the youngest customer's name
 var youngestCustomer = function(array) {
     var youngest = _.reduce(array, function(youngestCustomer, customer) {
-        if (customer.age > youngestCustomer.age) {
+        if (customer.age < youngestCustomer.age) {
             youngestCustomer = customer;
         }
         return youngestCustomer;
@@ -77,13 +77,75 @@ var youngestCustomer = function(array) {
     return youngest.name;
 };
 
-var averageBalance;
+// function takes in an array
+// function returns a number that is the avg bal of all customers
+var averageBalance = function(array) {
+    var total = _.reduce(array, function(accumulator, current, index, array) {
+        var balance = current.balance.replace(/[$,]/g, "");
+        var num = parseFloat(balance);
+        accumulator += num;
+        return accumulator;
+    }, 0)
+    return total / array.length;
+};
 
-var firstLetterCount;
+// function takes in an array and a letter
+// function returns the number of customers names that begin with the letter
+var firstLetterCount = function(array, letter) {
+    // create counting variable
+    var total = 0;
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        // if name contains letter
+        if (array[i].name[0].toLowerCase() === letter.toLowerCase()) {
+            total += 1;
+        }
+    }
+    // return the total number
+    return total;
+};
 
-var friendFirstLetterCount;
+// function takes in an array, customer, and letter
+// function returns the number of friends the given customer has with the given letter
+var friendFirstLetterCount = function(array, customer, letter) {
+    // create counting variable
+    var total = 0;
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        // if customer is in array
+        if (array[i].name === customer) {
+            // iterate through freinds list
+            for (let j = 0; j < array[i].friends.length; j++) {
+                // if friend name starts with letter
+                if (array[i].friends[j].name[0].toLowerCase() === letter.toLowerCase()) {
+                    total += 1;
+                }
+            }
+        }
+    }
+    // return total;
+    return total;
+};
 
-var friendsCount;
+// function takes in an array and name
+// function returns an array of the names that have a given customers name in it
+var friendsCount = function(array, name) {
+    // create variable to hold list
+    var list = [];
+    // iterate through array
+    for (let i = 0; i < array.length; i++) {
+        // iterate through friends list
+        for (let j = 0; j < array[i].friends.length; j++) {
+            // if friends name equals input name
+            if (array[i].friends[j].name === name) {
+                // put in new array
+                list.push(array[i].name);
+            }
+        }
+    }
+    // return the list of names
+    return list;
+};
 
 var topThreeTags;
 
