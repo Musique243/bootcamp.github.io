@@ -43,16 +43,29 @@ function sum(array) {
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
-
+// function takes in an array
+// function returns a new array with elements reversed
+function reverseArray(array) {
+  var reversed = [];
+  // iterate through array backwards
+  for (let i = array.length -1; i >=0; i--) {
+    reversed.push(array[i]);
+  }
+  // return output array
+  return reversed;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
-
+function reverseArrayInPlace(array) {
+  for (let i = 0; i < Math.floor(array.length / 2); i++) {
+    let old = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = old;
+  }
+  return array;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
