@@ -4,16 +4,39 @@
 
 // function takes in a start and an end
 // function returns an array of all numbers from start and including end
-function range(start, end) {
-
+function range(start, end, step = start < end ? 1 : -1) {
+  // create an empty array
+  var output = [];
+  if (start === end) {
+    return [];
+  }
+  if (step > 0) {
+    for (let i = start; i <= end; i += step) {
+      output.push(i);
+    }
+  }else {
+    if (step < 0) {
+      for (let i = start; i >= end; i += step) {
+        output.push(i);
+      }
+    }
+  }
+  return output;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum() {
-
+// function takes in an array
+// function returns the sum of numbers in array
+function sum(array) {
+  var total = 0;
+  // iterate through array
+  for (let i = 0; i < array.length; i++) {
+    total += array[i];
+  }
+  return total;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
