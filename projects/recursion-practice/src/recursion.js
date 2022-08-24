@@ -384,13 +384,35 @@ var minimizeZeroes = function(array, output = []) {
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function(array) {
+var alternateSign = function(array, output = [], index = 0) { 
+  if (array.length === 0) {
+    return output;
+  }
+  if (index % 2 === 0) {
+    output.push(Math.abs(array[0]));
+  }else if (array[0] < 0) {
+    output.push(array[0]);
+  }else{
+    output.push(array[0] * -1);
+  }
+  return alternateSign(array.slice(1), output, index + 1);
+  
 };
 
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
-var numToText = function(str) {
+var numToText = function(str, output = "") { 
+  var nums = {0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"};
+  if (str.length === 0) {
+    return output;
+  }
+  if (nums.hasOwnProperty(str[0])) {
+    output += nums[str[0]];
+  }else{
+    output += (str[0]);
+  }
+  return numToText(str.slice(1), output);
 };
 
 // *** EXTRA CREDIT ***
