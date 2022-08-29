@@ -127,6 +127,15 @@ var reverse = function(string) {
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
   // base
+  if (string.length < 2) {
+    return true;
+  }
+  if (string[0].toLowerCase() === string[string.length - 1].toLowerCase()) {
+    string.replace(/\s/g, "");
+    palindrome(string.slice(1, string.length - 1));
+    return true;
+  }
+  return false;
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -278,6 +287,7 @@ var nthFibo = function(n) {
   if (n < 0) {
     return null;
   }
+  return n < 2 ? n : nthFibo(n - 1) + nthFibo(n - 2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
