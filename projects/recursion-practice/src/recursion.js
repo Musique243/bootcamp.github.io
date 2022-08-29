@@ -72,11 +72,14 @@ var sumBelow = function(n) {
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y, result = []) {
-  // base
-  if (x === y) {
-    return result;
-  }
-
+ const step = x > y ? -1: 1;
+ if (x === y) {
+  return result;
+ }else if (x === y - step) {
+  return result;
+ }else {
+  return result.concat(x + step, range(x + step, y));
+ }
 };
 
 // 7. Compute the exponent of a number.
