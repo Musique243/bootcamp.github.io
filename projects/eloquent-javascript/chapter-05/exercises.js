@@ -3,7 +3,10 @@
 // /////////////////////////////////////////////////////////////////////////////
 
 function flatten(arrays) {
-  console.log(arrays.reduce((flat, current) => flat.concat(current), []));
+  const reduced = arrays.reduce((result,array) => result.concat(array),[]);
+
+  console.log(reduced);
+  return reduced;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
