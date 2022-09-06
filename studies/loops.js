@@ -15,9 +15,9 @@ update: defines how to increment or decrement the counting variable
 */
 
 var array = [1, 2, 3, 4, 5];
-for (var i = 3; i < array.length; i++) {
+for (var i = 0; i < array.length; i++) {
   console.log(array[i]);
-} // index starts at index 3 and stops at end of array, incrementing. Prints 4, 5 //
+} // index starts at index 0 and stops at end of array, incrementing. Prints 1, 2, 3, 4, 5 //
 
 for (var i = array.length-1; i >= 0; i--) {
   console.log(array[i]);
