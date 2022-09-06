@@ -29,22 +29,51 @@ console.log(x %= 2); // prints 1
 +	  Addition
 -	  Subtraction
 *	  Multiplication
-**	  Exponentiation   raises first operand to power of the second operand
+**	Exponentiation   raises first operand to power of the second operand
 /	  Division
 %	  Remainder        returns the division remainder
-++	  Increment
---	  Decrement
+++	Increment
+--	Decrement
 
 */
+
 var x = 6;
 var y = 2;
 var z = x * y;
 console.log(z); // prints 12
 
+var x = 10;
+var y = 20;
+var z = x + y;
+console.log(z); // Prints 30
+
+var x = 5;
+var y = 5;
+var z = x - y;
+console.log(z); // Prints 0
+
+var x = 10;
+var y = 2;
+var z = x / y;
+console.log(z); // Prints 5
+
+var x = 5;
+var y = 2;
+var z = x % y;
+console.log(z); // Prints 1
+
 var x = 3;
 x++;
 var z = x;
-console.log(z); // prints 4
+console.log(z); // Prints 4
+
+var x = 5;
+x--;
+console.log(x); // Prints 4
+
+var x = 5;
+var y = x ** 2;
+console.log(y); // Prints 25
 
 // 3. Comparison Operators //
 /* Used to compare its operands and returns a logical value whether the comparison is true. Comparison operators are used in logical statements to determine equality or difference between variables or values.
