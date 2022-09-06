@@ -63,3 +63,21 @@ console.log(object.name); // Prints Randy
 // 3. Infinity and Negative Infinity //
 /* Infinity is a numeric value that represents positive infinity. Any positive value multiplied by infinity will equal infinity. Any positive number divided by infinity will equal zero and will also hold a true value. Negative infinity represents the negative infinity value. Any positive value multiplied by negative infinity (including infinity) will equal negative infinity. Negative infinity divided by negative value (except negative infinity) will equal positive infinity.
 */
+
+// 4. Copy by value & Copy by reference //
+// Copy by value pertains to primitive datatypes in such where we can assign a variable to equal a copy of another variable
+
+var a = 50;
+var b = a; // variable b is assigned the copied value of a
+
+a = 0; // we reassign a to equal 0
+console.log(a); // Prints 0 because a has been reassigned
+console.log(b); // Prints 50 because b was assigned the copied value of a = 50
+
+// Copy by reference pertains to complex datatypes where the value is pointing to a reference value and not a copy
+
+let user = { name: "Ralph"};
+let profile = user;
+
+profile.name = "Lola"; // when profile name is changed, it changes the name of user as well because both are pointing at the same value
+console.log(user.name); // Prints Lola
