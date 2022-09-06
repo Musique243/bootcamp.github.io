@@ -8,6 +8,21 @@
 /* Parameters are required inputs for the function. These inputs should be named appropriately to make what needs to be provided for the function clear. Arguments are the inputs or values that are passed to the function during the call phase.
 */
 
+//Parameters are variables listed as part of the function definition
+
+function sum(param1, param2) {
+  console.log(param1 + param2);
+}
+
+//Arguments are values that are passed to the function when it is invoked
+
+sum(arg1, arg2); 
+
+function sum(param1, param2) { // the function takes in two parameters and will return the sum of both printed to the console
+  console.log(param1 + param2);
+}
+sum(10, 20); // when we invoke the function, we pass in the two values of 10 & 20. The function adds both values together and will return 30
+
 function sub(num1, num2) { // num1 & num2 are parameters or inputs that the function takes in
     return num1 - num2;
 }
@@ -51,10 +66,12 @@ var add = function(num1, num2) {
 
   addToTotal(5); // function is invoked, it modifies the variable but it can only be accessed inside the function
 
+  //Closure gives access to an outer function's scope from an inner function even after the parent function has closed
+
   function example() {
     const name = "Ted";
-    function showName() {
-        console.log(name);
+    function showName() { 
+        console.log(name); // a closure occurs when the showName function accesses the varible name from its parent scope and keeps the variable alive
     }
     return showName;
   }
